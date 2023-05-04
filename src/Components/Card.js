@@ -9,7 +9,7 @@ const Card = ({ id, attributes }) => {
         <div className="card-image">
           <img
             style={{ width: "250px", height: "200px" }}
-            src={`${URL + attributes.Image.data[0].attributes.url}`}
+            src={attributes.Image.data[0].attributes.url}
             alt="sample"
           />
         </div>
