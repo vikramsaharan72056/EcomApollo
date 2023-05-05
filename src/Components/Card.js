@@ -7,15 +7,15 @@ const Card = ({ id, attributes }) => {
     <div className="card" style={{ width: "150px", margin: "10px" }}>
       <Link to={`/product/${id}`}>
         <div className="card-image">
-          <img
-            style={{ width: "100%", height: "100px" }}
-            src={attributes.Image.data[0].attributes.url}
-            alt="sample"
-          />
-          <div className="card-title black-text ">
-            <h6>
-              <b>{attributes.Name}</b>
-            </h6>
+          <div>
+            <img
+              style={{ width: "100%", height: "100px" }}
+              src={attributes.Image.data[0].attributes.url}
+              alt="sample"
+            />
+            <div className="card-title black-text ">
+              <h6>{attributes.Name}</h6>
+            </div>
           </div>
         </div>
         <span className="card-content">
