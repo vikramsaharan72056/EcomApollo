@@ -18,7 +18,6 @@ const Product = () => {
     return error;
   }
   if (data) {
-    console.log(data.product.data.attributes);
     const { Name, Price, Description, Image } = data.product.data.attributes;
     const addToCart = () => {
       addItem({
