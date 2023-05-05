@@ -18,13 +18,14 @@ const Product = () => {
     return error;
   }
   if (data) {
+    console.log(data.product.data.attributes);
     const { Name, Price, Description, Image } = data.product.data.attributes;
     const addToCart = () => {
       addItem({
         id: pid,
         name: Name,
         price: Price,
-        img: `${URL + Image.data[0].attributes.url}`,
+        img: Image.data[0].attributes.url,
       });
     };
 
@@ -32,20 +33,20 @@ const Product = () => {
       <div className="container row">
         <div className=" col m10" style={{ marginTop: "5px" }}>
           <img
-            style={{ width: "100%", height: "500px" }}
-            src={`${URL + Image.data[0].attributes.url}`}
+            style={{ width: "100%", height: "60%" }}
+            src={Image.data[0].attributes.url}
             alt="sample"
           />
           <h3>{Name}</h3>
           <h4 className="green-text">Price:&nbsp;&nbsp;Rs.{Price}</h4>
-          <h5 style={{ margin: "5%" }}>{Description}</h5>
+          <h6 style={{ margin: "5%" }}>{Description}</h6>
           <button
             className="btn"
             style={{
-              marginLeft: "40%",
+              marginLeft: "35%",
               marginBottom: "2%",
               textSizeAdjust: "auto",
-              width: "25%",
+              width: "150px",
               fontSize: "15px",
             }}
             onClick={() => {

@@ -16,7 +16,6 @@ const Home = () => {
         style={{
           display: "flex",
           flexWrap: "wrap",
-          justifyContent: "space-around",
         }}
       >
         {data.products.data.map(({ id, attributes }) => {

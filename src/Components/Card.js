@@ -1,27 +1,31 @@
 import React from "react";
-import { URL } from "../help";
+
 import { Link } from "react-router-dom";
 
 const Card = ({ id, attributes }) => {
   return (
-    <Link to={`/product/${id}`}>
-      <div className="card" style={{ width: "80%", margin: "10px" }}>
+    <div className="card" style={{ width: "150px", margin: "10px" }}>
+      <Link to={`/product/${id}`}>
         <div className="card-image">
           <img
-            style={{ width: "100%", height: "200px" }}
+            style={{ width: "100%", height: "100px" }}
             src={attributes.Image.data[0].attributes.url}
             alt="sample"
           />
+          <div className="card-title black-text ">
+            <h6>
+              <b>{attributes.Name}</b>
+            </h6>
+          </div>
         </div>
-        <div className="card-content truncate black-text">
-          <span className="card-title " style={{ marginLeft: "-15px" }}>
-            <h4>{attributes.Name}</h4>
-          </span>
-          <h6>About:{attributes.Description}</h6>
-          <h5>Price:&nbsp;&nbsp;Rs. {attributes.Price}</h5>
-        </div>
-      </div>
-    </Link>
+        <span className="card-content">
+          <p className="truncate">{attributes.Description}</p>
+          <h6 className="green-text">
+            <b>Price:</b>&nbsp;&nbsp; {attributes.Price}
+          </h6>
+        </span>
+      </Link>
+    </div>
   );
 };
 
