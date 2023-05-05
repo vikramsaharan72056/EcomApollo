@@ -5,10 +5,10 @@ import { Link } from "react-router-dom";
 const Card = ({ id, attributes }) => {
   return (
     <Link to={`/product/${id}`}>
-      <div className="card" style={{ width: "250px", margin: "10px" }}>
+      <div className="card" style={{ width: "80%", margin: "10px" }}>
         <div className="card-image">
           <img
-            style={{ width: "250px", height: "200px" }}
+            style={{ width: "100%", height: "200px" }}
             src={attributes.Image.data[0].attributes.url}
             alt="sample"
           />
