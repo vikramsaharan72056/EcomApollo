@@ -33,7 +33,7 @@ const Cart = () => {
           {items.map((item) => {
             return (
               <li className="collection-item avatar">
-                <img src={item.img} alt="sample" className="circle" />
+                <img src={`http://localhost:1337${item.img}`} alt="sample" className="circle" />
                 <span className="title">{item.name}</span>
                 <div>
                   <p className="green-text">

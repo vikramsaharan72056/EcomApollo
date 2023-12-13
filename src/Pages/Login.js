@@ -47,12 +47,20 @@ const Login = () => {
           onChange={handleChange}
         />
         <button
-          style={{ marginLeft: "40%", marginTop: "4%", marginBottom: "4%" }}
+          style={{ marginLeft: "40%", marginTop: "4%", marginBottom: "1%" }}
           type="submit"
           className="btn blue"
         >
           Login
-        </button>
+        </button><br/>
+        <p>if you don't have an account already?
+        then  <a style={{marginBottom: "1%",marginLeft:"2%",font:"40px"}}
+              onClick={() => {
+                navigate("/signup");
+              }}
+            >
+              SignUp
+            </a></p>
       </form>
     </div>
   );

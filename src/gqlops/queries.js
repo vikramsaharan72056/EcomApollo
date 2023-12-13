@@ -1,15 +1,15 @@
 import { gql } from "@apollo/client";
 
-export const GET_ALL_Products = gql`
+export const GET_ALL_PRODUCTS = gql`
   query getAllProducts {
     products {
       data {
         id
         attributes {
-          Name
-          Description
-          Price
-          Image {
+          name
+          description
+          price
+          image {
             data {
               attributes {
                 url
@@ -28,10 +28,10 @@ export const GET_PRODUCT = gql`
       data {
         id
         attributes {
-          Name
-          Price
-          Description
-          Image {
+          name
+          price
+          description
+          image{
             data {
               attributes {
                 url

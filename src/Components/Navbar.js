@@ -7,8 +7,8 @@ const Navbar = () => {
   return (
     <nav>
       <div className="nav-wrapper">
-        <Link to="/" className="brand-logo left">
-          Flipkart
+        <Link to="/" style={{marginLeft: "5%"}}className="brand-logo left">
+          Rahulkart
         </Link>
         <ul id="nav-mobile" className="right ">
           {jwt ? (

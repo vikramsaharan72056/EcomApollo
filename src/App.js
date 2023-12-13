@@ -7,7 +7,7 @@ import routes from "./Components/routes";
 import { CartProvider } from "react-use-cart";
 
 const client = new ApolloClient({
-  uri: "https://ecomstrapi1.onrender.com/graphql",
+  uri: "http://localhost:1337/graphql",
   cache: new InMemoryCache(),
 });
 

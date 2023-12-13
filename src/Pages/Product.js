@@ -13,18 +13,22 @@ const Product = () => {
       productId: pid,
     },
   });
-  if (loading) return <h3>Loading....</h3>;
-  if (error) {
+  if (loading) 
+  {return <h3>Loading....</h3>;}
+  else if (error) {
     return error;
+  }else{
+    console.log(data);
   }
+
   if (data) {
-    const { Name, Price, Description, Image } = data.product.data.attributes;
+    const { name, price,description, image } = data.product.data.attributes;
     const addToCart = () => {
       addItem({
         id: pid,
-        name: Name,
-        price: Price,
-        img: Image.data[0].attributes.url,
+        name: name,
+        price: price,
+        img: image.data[0].attributes.url,
       });
     };
 
@@ -32,13 +36,13 @@ const Product = () => {
       <div className="container row">
         <div className=" col m10" style={{ marginTop: "5px" }}>
           <img
-            style={{ width: "100%", height: "60%" }}
-            src={Image.data[0].attributes.url}
+            style={{ width: "90%%", height: "60%" }}
+            src={`http://localhost:1337${image.data[0].attributes.url}`}
             alt="sample"
           />
-          <h3>{Name}</h3>
-          <h4 className="green-text">Price:&nbsp;&nbsp;Rs.{Price}</h4>
-          <h6 style={{ margin: "5%" }}>{Description}</h6>
+          <h3>{name}</h3>
+          <h4 className="green-text">Price:&nbsp;&nbsp;Rs.{price}</h4>
+          <h6 style={{ margin: "5%" }}>{description}</h6>
           <button
             className="btn"
             style={{
